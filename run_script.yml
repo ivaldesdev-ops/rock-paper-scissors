@@ -1,0 +1,24 @@
+name: Run Python Script
+on:
+  workflow_dispatch: # Adds a manual "Run workflow" button
+  schedule:
+    - cron: '0 0 * * *' # Optional: Runs automatically every day at midnight
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Run script
+        run: python your_script_name.py

@@ -1,4 +1,4 @@
-            - name: Run Python Script
+- name: Run Python Script
   # You may pin to the exact commit or the version.
   # uses: jannekem/run-python-script-action@9d8e2e0878d575fb6073277f38ce3f10ebf4f059
   uses: jannekem/run-python-script-action@v1.8

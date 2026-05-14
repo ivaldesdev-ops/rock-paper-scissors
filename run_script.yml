@@ -1,8 +1,8 @@
 name: Run Python Script
 on:
-  workflow_dispatch: # Adds a manual "Run workflow" button
+  workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *' # Optional: Runs automatically every day at midnight
+    - cron: '0 0 * * *'
 
 jobs:
   build:
@@ -22,14 +22,3 @@ jobs:
 
       - name: Run script
         run: python RockPaperScissors.py
-        
-      - name: Run Python Script
-        uses: jannekem/run-python-script-action@v1.8
-        with:
-          # Python script
-          script: RockPaperScissors.py
-          # Fail step if the return code from running the script is non-zero
-          fail-on-error: # optional, default is true
-          # Include utility functions
-          util: # optional, default is true
-          
